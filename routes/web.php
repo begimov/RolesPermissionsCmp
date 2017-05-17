@@ -22,3 +22,14 @@ Route::get('/', function (\Illuminate\Http\Request $req) {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'role:admin'], function () {
+  Route::group(['middleware' => 'role:admin,delete users'], function () {
+      Route::get('/admin/users', function () {
+          return 'Delete users';
+      });
+  });
+    Route::get('/admin', function () {
+        return 'Admin panel';
+    });
+});
