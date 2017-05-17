@@ -13,19 +13,10 @@
 
 Route::get('/', function (\Illuminate\Http\Request $req) {
     $user = $req->user();
-
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
-    dump($user->hasRole('admin'));
+    // $user->givePermissionTo('edit posts', 'delete posts');
+    // $user->updatePermissions('delete posts');
+    // $user->withdrawPermissionTo('edit posts', 'delete posts');
+    return view('welcome');
 });
 
 Auth::routes();
